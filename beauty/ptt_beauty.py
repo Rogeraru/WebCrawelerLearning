@@ -16,7 +16,6 @@ def run():
     headers = {"Cookie": "over18=1", "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Safari/537.36", "Referer": "https://www.ptt.cc/ask/over18?from=%2Fbbs%2FBeauty%2FM.1686997472.A.FDA.html"}
     response = requests.get(url, headers = headers)
     soup = BeautifulSoup(response.text, "html.parser")
-
     spans = soup.find_all("span", class_="article-meta-value")
     title = spans[2].text
     dir_name = f"imgs/{title}"
